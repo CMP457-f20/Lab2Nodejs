@@ -19,3 +19,5 @@ else if (!opclose_boolean)
     console.log("Someone left...")
     console.log("Bye bye! Lights switched off")
 }
+
+
