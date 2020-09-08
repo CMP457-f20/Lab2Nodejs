@@ -2,15 +2,28 @@ const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max-min +1)) + min;
 }
 
-var sensorValues = {temp:randomNumber(18,30), opclose:Math.random() >= 0.5};
+var i;
+var arr1 = [];
 
-if (sensorValues.temp >= 25)
+for (i=0;i<20;i++){
+   var temp = randomNumber(18, 30); //for temperature
+   arr1.push(temp);
+}
+   
+var opclose = randomNumber(0,1);  //for door close and open
+console.log(arr1);
+var maxVal = Math.max(...arr1);
+console.log(maxVal);
+console.log("The room tempterature is "+ temp);
+
+
+if (maxVal >= 25)
 {
    console.log("It is too hot... AC switched on");
-         if (sensorValues.opclose)
+         if (opclose)
             {
                 console.log("Someone walked in...");
-                console.log("Welcome.. Lights switched on");
+                console.log("Welcome home.. Lights switched on");
             }
             else 
             {
@@ -20,10 +33,11 @@ if (sensorValues.temp >= 25)
 
 }
 
-else  if (sensorValues.temp < 25)
+else  if (maxVal < 25)
 {
-    console.log("It is too cold.. AC switched off")
-        if (sensorValues.opclose)
+    
+    console.log("It is too cold.. AC switched off");
+        if (opclose)
         {
             console.log("Someone walked in...");
             console.log("Welcome.. Lights switched on");
@@ -35,6 +49,3 @@ else  if (sensorValues.temp < 25)
         }
 }
  
-console.log("The sensor values are");
-console.log("Temperature: " + sensorValues.temp + "C");
-console.log("Lights-on: " + sensorValues.opclose);
