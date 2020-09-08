@@ -3,18 +3,18 @@ const randomNumber = (min, max) => {
 }
 
 var i;
-var arr1 = [];
+var arr1 = []; //array declaration
 
 for (i=0;i<20;i++){
    var temp = randomNumber(18, 30); //for temperature
    arr1.push(temp);
 }
    
-var opclose = randomNumber(0,1);  //for door close and open
-console.log(arr1);
+var opclose = Math.random() >= 0.5;  //for door close and open
+
 var maxVal = Math.max(...arr1);
-console.log(maxVal);
-console.log("The room tempterature is "+ temp);
+
+
 
 
 if (maxVal >= 25)
@@ -48,4 +48,8 @@ else  if (maxVal < 25)
             console.log("Bye bye! Lights switched off");
         }
 }
+
+console.log("The sensor values are");
+console.log("Temperature: " + maxVal + "C");
+console.log("Lights-on: " + opclose);
  
