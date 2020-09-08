@@ -7,7 +7,7 @@ var arr1 = []; //array declaration
 
 for (i=0;i<20;i++){
    var temp = randomNumber(18, 30); //for temperature
-   arr1.push(temp);
+   arr1.push(temp); //appending value to array
 }
    
 var opclose = Math.random() >= 0.5;  //for door close and open
