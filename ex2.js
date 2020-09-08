@@ -1,5 +1,5 @@
 const randomNumber = (min, max) => {
-    return Math.floor(Math.random() * (max-min +1)) + min;
+    return Math.floor(Math.random() * (max-min +1)) + min; //return random temp
 }
 
 var sensorValues = {temp:randomNumber(18,30), opclose:Math.random() >= 0.5}; //objects
